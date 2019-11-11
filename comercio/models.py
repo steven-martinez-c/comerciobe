@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class local(models.Model):
+class Local(models.Model):
     """
     Clase que representa un local comercial
     """
