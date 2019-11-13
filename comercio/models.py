@@ -14,6 +14,18 @@ class Abuelo(models.Model):
     def __str__(self):
         return self.nombre
 
+    def nietos_hijos(self):
+        return Hijo.objects.filter(padre__abuelo=self)
+
+    def nietos_primos(self):
+        return Primo.objects.filter(tio__abuelo=self)
+
+    def nietos(self):
+        lista = list()
+        lista.append(self.nietos_hijos())
+        lista.append(self.nietos_primos())
+        return lista
+
 
 class Padre(models.Model):
     nombre = models.CharField(max_length=250)
