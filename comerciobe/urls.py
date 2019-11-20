@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
 
+from comerciobe import views
 
 """instalar libreia coreapi"""
 API_TITLE = 'API comercio'
 API_DESCRIPTION = 'Documentacion API'
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^api/', include(('api.urls', 'api'), namespace='api')),
     url(r'^docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION))

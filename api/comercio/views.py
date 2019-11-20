@@ -10,11 +10,31 @@
 # --> destroy (borra un objeto)
 from rest_framework import viewsets
 
-from api.comercio.serializers import LocalSerializer
-from comercio.models import Local
+from api.comercio.serializers import LocalSerializer, SeccionSerializer, ProductoSerializer, OfertaProductoSerializer, \
+    ValoracionSerializer
+from comercio.models import Local, Valoracion, OfertaProducto, Producto, Seccion
 
 
 class LocalViewSet(viewsets.ModelViewSet):
     queryset = Local.objects.all()
     serializer_class = LocalSerializer
 
+
+class SeccionViewSet(viewsets.ModelViewSet):
+    queryset = Seccion.objects.all()
+    serializer_class = SeccionSerializer
+
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+
+class OfertaProductoViewSet(viewsets.ModelViewSet):
+    queryset = OfertaProducto.objects.all()
+    serializer_class = OfertaProductoSerializer
+
+
+class ValoracionViewSet(viewsets.ModelViewSet):
+    queryset = Valoracion.objects.all()
+    serializer_class = ValoracionSerializer
