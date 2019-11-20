@@ -1,10 +1,9 @@
 from django.contrib import admin
 
-from comercio.models import Local, Abuelo, Padre, Tio, Hijo, Primo
+from comercio.models import Local, Seccion, Producto, OfertaProducto, Valoracion
 
 admin.site.register(Local)
-admin.site.register(Abuelo)
-admin.site.register(Padre)
-admin.site.register(Tio)
-admin.site.register(Hijo)
-admin.site.register(Primo)
+admin.site.register(Seccion)
+admin.site.register(Producto)
+admin.site.register(OfertaProducto)
+admin.site.register(Valoracion)
