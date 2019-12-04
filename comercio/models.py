@@ -8,6 +8,9 @@ class Local(models.Model):
     """
     nombre = models.CharField(max_length=250)
 
+    class Meta:
+        ordering = ['nombre']
+
 
 class Seccion(models.Model):
     nombre = models.CharField(max_length=250)
